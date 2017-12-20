@@ -38,5 +38,13 @@ var config = {
   	//keep the button from refreshing the page
   	e.preventDefault();
 
+  	//set up variables to grab user's entry into the Add Train panel's forms
+
+  	var trainName = $("#train-name").val().trim();
+  	var destination = $("user-destination").val().trim();
+  	var firstTrainTime = $("first-train-time").val().trim();
+  	var frequency = $("#train-frequency").val().trim();
+
+  	
 
   })
