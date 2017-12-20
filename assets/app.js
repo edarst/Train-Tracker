@@ -21,12 +21,10 @@ var config = {
   // database.ref("/trainData").on("child-added", function (snap) {
 
   // 	//logging the object's value
-  
+
   // 	console.log(snap.val());
 
-  // 	//append train name input to train name column
-
-  // 	//append destination input to destination column
+  // 	//append results to the table rows
 
 
   // })
@@ -36,14 +34,17 @@ var config = {
   $("#user-submit").on("click", function(e) {
 
   	//keep the button from refreshing the page
+
   	e.preventDefault();
 
   	//set up variables to grab user's entry into the Add Train panel's forms
 
   	var trainName = $("#train-name").val().trim();
-  	var destination = $("user-destination").val().trim();
-  	var firstTrainTime = $("first-train-time").val().trim();
+  	var destination = $("#user-destination").val().trim();
+  	var firstTrainTime = $("#first-train-time").val().trim();
   	var frequency = $("#train-frequency").val().trim();
+
+  	//logging the results to ensure information is submitting in forms
 
   	console.log(trainName);
   	console.log(destination);
