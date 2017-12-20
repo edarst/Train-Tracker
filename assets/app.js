@@ -1,6 +1,8 @@
-//link up to Firebase Database
+	//link up to Firebase Database
 
 $(document).ready(function() {
+
+  //setting up the Firebase database
 
 var config = {
   	apiKey: "AIzaSyCspLJjAdWnu0kaLPgmyBgBlbcgGEZoeFY",
@@ -13,23 +15,21 @@ var config = {
   };
   firebase.initializeApp(config);
 
-  //setting up the Firebase database
-
-  var database = firebase.initializeApp(config);
-
+  var database = firebase.database();
   //creating a new row whenever we collect data for the table
 
-  database.ref("/trainData").on("child-added", function (snap) {
+  // database.ref("/trainData").on("child-added", function (snap) {
 
-  	//logging the object's value
-  	console.log(snap.val());
+  // 	//logging the object's value
+  
+  // 	console.log(snap.val());
 
-  	//append train name input to train name column
+  // 	//append train name input to train name column
 
-  	//append destination input to destination column
+  // 	//append destination input to destination column
 
 
-  })
+  // })
 
   //setting up the on-click function for when the user hits submit
 
@@ -45,6 +45,11 @@ var config = {
   	var firstTrainTime = $("first-train-time").val().trim();
   	var frequency = $("#train-frequency").val().trim();
 
-  	
+  	console.log(trainName);
+  	console.log(destination);
+  	console.log(firstTrainTime);
+  	console.log(frequency);
 
-  })
+  });
+
+});
