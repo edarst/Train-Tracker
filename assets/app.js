@@ -51,6 +51,27 @@ var config = {
   	console.log(firstTrainTime);
   	console.log(frequency);
 
+  	//push this up to Firebase
+
+  	database.ref("/trainData").push({
+
+  		"Train Name": trainName,
+  		"Destination": destination,
+  		"First Train Time": firstTrainTime,
+  		"Frequency": frequency
+
+
+  	});
+
+  	//empties out values
+
+  	$("#train-name").val("");
+  	$("#user-destination").val("");
+  	$("#first-train-time").val("");
+  	$("frequency").val("");
+
+  		return false;
+
   });
 
 });
