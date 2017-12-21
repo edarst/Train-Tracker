@@ -1,3 +1,10 @@
+//V1.2 KNOWN ISSUES
+
+//Submit form is logging, but not appending to page or updating in Firbase	
+
+
+
+
 	//link up to Firebase Database
 
 $(document).ready(function() {
@@ -90,6 +97,29 @@ var config = {
   	console.log(snapshot.val().firstTrainTime);
   	console.log(snapshot.val().frequency);
 
+  	//Pushing information to the HTML table
+
+  	//Create new variables for our math
+
+  	var tableName = snapshot.val().trainName;
+  	var tableDestination = snapshot.val().destination;
+  	var tableFirstTrainTime = snapshot.val().firstTrainTime;
+  	var tableFrequency = snapshot.val().frequency;
+
+  	//Math for calculations, which I do not understand and got a ton of help on in class. Will need to review this.
+
+		var tableFirstTrainTimeConvert = moment(firstTrainTime, "hh:mm").subtract(1, "years");
+		console.log("Converted time: " + tableFirstTrainTimeConvert);
+
+
+
+
+		//append the results to the table
+
+		//Logging out errors
+
+	}, function(errorObject) {
+  	console.log("Error, read failed: " + errorObject.code);
 
   })
 
