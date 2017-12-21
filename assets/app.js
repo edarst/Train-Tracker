@@ -63,7 +63,7 @@ var config = {
 
   	});
 
-  	//empties out values
+  	//empties out values after submitting
 
   	$("#train-name").val("");
   	$("#user-destination").val("");
@@ -73,5 +73,24 @@ var config = {
   		return false;
 
   });
+
+  	//Tracking changes to Firebase
+
+  database.ref().orderByChild("dateAdded").on("child-added", function (snapshot) {
+
+
+  	//Checking in console to see if this is a working function
+
+  	console.log(snapshot.val());
+
+  	//Checking in console to see if each value is working
+
+  	console.log(snapshot.val().trainName);
+  	console.log(snapshot.val().destination);
+  	console.log(snapshot.val().firstTrainTime);
+  	console.log(snapshot.val().frequency);
+
+
+  })
 
 });
