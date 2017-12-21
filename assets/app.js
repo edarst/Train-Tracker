@@ -111,6 +111,10 @@ var config = {
 		var tableFirstTrainTimeConvert = moment(firstTrainTime, "hh:mm").subtract(1, "years");
 		console.log("Converted time: " + tableFirstTrainTimeConvert);
 
+		//Getting difference between current time and first time
+		var differenceTime = moment().diff(moment(tableFirstTrainTimeConvert), "minutes");
+		console.log("Difference in time: " + differenceTime);
+
 
 
 
