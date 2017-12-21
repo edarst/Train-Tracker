@@ -115,7 +115,17 @@ var config = {
 		var differenceTime = moment().diff(moment(tableFirstTrainTimeConvert), "minutes");
 		console.log("Difference in time: " + differenceTime);
 
+		//Grabbing the remainder from the function above
+		var timeRemainder = differenceTime % tableFrequency;
+		console.log("Time remainder: " + timeRemainder);
 
+		//Subtract the remainder we found above from the frequency
+		var timeUntilTrain = tableFrequency - timeRemainder;
+		console.log("Minutes until next train: " + timeUntilTrain);
+
+		//When user can get the next train
+		var nextTrain = moment().add(timeUntilTrain, "minutes");
+		console.log("Train arrival time: " + moment(nextTrain).format("hh:mm"));
 
 
 		//append the results to the table
